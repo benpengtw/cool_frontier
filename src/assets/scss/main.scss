@@ -1,0 +1,169 @@
+@import './normalize.scss';
+@import './tailwind.scss';
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap');
+
+* {
+  box-sizing: border-box !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-x: hidden;
+  font-family: "Bodoni", Helvetica, Arial, sans-serif,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: transparent;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  color: #fff;
+  background: transparent;
+}
+@media only screen and (min-width: 1025px)  {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: stretch;
+    overflow-x: hidden;
+    font-family: 'PingFangTC', 'PingFangSC', "Bodoni", Helvetica, Arial, sans-serif,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url("../bg.jpg");
+  }
+  #app {
+    width: 40%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    color: #fff;
+    background: transparent;
+    justify-content: center;
+  }
+  .van-tabbar {
+    width: 40%;
+    position: absolute;
+    left: 30.0%;
+  }
+  .container.FLEX_C.home {
+    height: 40%;
+    margin-top: 25%;
+    border-radius: 8px;
+    box-shadow: 5px 4px 62px rgba(0, 0, 0, 0.25);
+    // background: linear-gradient(135.35deg, #343434 5.41%, #0D0D0D 117.05%);
+    // align-items:center;
+    // justify-content: center;
+  }
+  .container.p-12.mt-8.FLEX_C.loginBox{
+    background:#2f2f31;
+  }
+}
+h1,h2,h3,h4,h5,h6,p,div{
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+
+h1 {
+	// 32px
+	font-size: 2em !important;
+}
+h2 {
+	// 26px
+	font-size: 1.625rem !important;
+}
+h3 {
+	// 24px
+	font-size: 1.5em !important;
+}
+h4 {
+	// 20px
+	font-size: 1.25em !important;
+}
+h5 {
+	// 16px
+	font-size: 1em !important;
+}
+h6 {
+	// 14px
+	font-size: 0.875em !important;
+}
+button:focus {
+  outline: 0 !important;
+}
+
+.container{
+  max-width: 100%  !important;
+}
+@font-face {
+  font-family: "my-icon";
+  src: url("@/assets/fonts/icomoon.ttf") format("truetype");
+}
+.my-icon {
+  font-family: "my-icon";
+}
+:root {
+  --van-button-primary-background-color: red;
+  --van-cell-background-color:black;
+  --van-cell-text-color: #fff;
+  --van-field-label-color:#967140;
+  --van-field-input-text-color: #fff;
+  --van-calendar-background-color: black;
+  --van-calendar-day-disabled-color:#7f7f7f;
+  --van-calendar-range-middle-color:#fff; 
+  --van-calendar-range-edge-background-color:#cda269;
+  --van-calendar-range-middle-background-opacity:0.5;
+  --van-calendar-month-mark-color:#ffffff80;
+  --van-popup-background-color:#3c3c3c;
+  --van-toast-background-color:#CDA269;
+  --van-collapse-item-content-background-color:black;
+  --van-cell-active-color:#4a4a4a;
+  --van-cell-background-color:transparent;
+  --van-field-label-width:8rem;
+  // --van-picker-confirm-action-color:#CDA269;
+  // --van-picker-cancel-action-color:#CDA269;
+  // --van-picker-option-text-color:#FFF;
+}
+
+.goldGradient{
+  background: linear-gradient(302.01deg, #cda269 32.92%, #ffd49a 97.96%);
+}
+.darkGradient{
+  background: linear-gradient(155.07deg, #343434 5.26%, #181818 84.13%);
+}
+.bg_pop {
+  background: linear-gradient(180deg, #353535 0%, #000000 39.78%, #000000 100%);
+}

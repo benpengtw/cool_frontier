@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'my-icon';
+  src:  url('../fonts/icomoon.ttf?yo9g06') format('truetype');
+  /* font-weight: normal;
+  font-style: normal;
+  font-display: block; */
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.my-icon {
+  font-family: 'icomoon';
+  position: relative;
+  font: 0.37333rem/1 "my-icon";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.my-icon-home:before {
+  content: "\e90f";
+  /* color: #967140; */
+}
+.my-icon-member:before {
+  content: "\e919";
+  /* color: #967140; */
+}
+.my-icon-more:before {
+  content: "\e91b";
+  /* color: #967140; */
+}
+.my-icon-record:before {
+  content: "\e921";
+  /* color: #967140; */
+}
+.my-icon-share:before {
+  content: "\e924";
+  /* color: #967140; */
+}
+.my-icon-back:before {
+  content: "\e909";
+  /* color: #967140; */
+}
+.my-icon-register:before {
+  content: "\e922";
+  /* color: #967140; */
+}
+.my-icon-money:before {
+  content: "\e91a";
+  /* color: #967140; */
+}
+.my-icon-activity:before {
+  content: "\e900";
+  /* color: #967140; */
+}
+.my-icon-organization:before {
+  content: "\e91e";
+  /* color: #967140; */
+}
+.my-icon-link:before {
+  content: "\e918";
+  /* color: #967140; */
+}
+.my-icon-calendar:before {
+  content: "\e90a";
+  /* color: #967140; */
+}
+.my-icon-copy:before {
+  content: "\e90c";
+  /* color: #967140; */
+}
+.my-icon-qr:before {
+  content: "\e920";
+  /* color: #967140; */
+}
