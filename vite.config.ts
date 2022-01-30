@@ -20,15 +20,7 @@ export default ({ mode }) =>
           buildTime: dayjs().format("YYYY-MM-DD HH:mm:ss"),
         },
       }),
-      // vitePluginImport([
-      //   {
-      //     libraryName: 'element-plus',
-      //     libraryDirectory: 'es',
-      //     style(name) {
-      //       return `element-plus/lib/theme-chalk/${name}.css`;
-      //     },
-      //   }
-      // ])
+
       Components({
         resolvers: [ElementPlusResolver()],
       }),
@@ -39,6 +31,7 @@ export default ({ mode }) =>
     define: {
       "process.env": {},
     },
+
     resolve: {
       alias: {
         "@": resolve(__dirname, "src"),
