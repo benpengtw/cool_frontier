@@ -1,45 +1,56 @@
 <template lang="pug">
-.bg-gray-500.h-screen.pt-10
-  .flex.max-w-sm.mx-auto.p-6.rounded-lg.bg-white
-    .flex-shrink-0
-      img.h-12.w-12(src="../assets/logo.png")
-    .ml-6
-      h4.text-xl.text-gray-900.leading-tight.font-serif ChitChat
-      p.text-base.text-gray-600.leading-normal You have a message!
+.container.FLEX_C
+  .h-80.pt-10.mb-10.CENTER_R
+    el-row
+      el-col(
+        v-for="(o, index) in 2",
+        :key="o",
+        :span="8",
+        :offset="index > 0 ? 2 : 0"
+      )
+        el-card(:body-style="{ padding: '0px' }")
+          img.image(
+            src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+          )
+          div(style="padding: 14px")
+            span Yummy hamburger
+            .bottom
+              time.time {{ currentDate }}
+              el-button.button(type="text") Operating
+  .mt-20.CENTER_R
+    el-pagination(
+      layout="prev, pager, next",
+      :page-size="30",
+      :total="3030",
+      background
+    )
 </template>
 
-<script lang="ts">
-import { reactive, onMounted, computed } from "vue";
+<script setup lang="ts">
+import { reactive, onMounted, computed, ref } from "vue";
 import { getMemberList } from "@/api/members/member";
 import top1 from "@/assets/Frame_4.svg";
 import { UserStore } from "@/store/userStore";
 
-export default {
-  setup() {
-    const userStore = UserStore();
-    const getUserName = computed(() => userStore.getUserName);
-    const state = reactive({
-      loading: true,
-      top1: top1,
-      commissionRatio: 98.1,
-      netIncome: 87.5,
-      newMemberCounts: 35.2,
-      todayBetting: 33.1,
-      walletBalance: 27.5,
-    });
+const userStore = UserStore();
+const getUserName = computed(() => userStore.getUserName);
+const state = reactive({
+  loading: true,
+  top1: top1,
+  commissionRatio: 98.1,
+  netIncome: 87.5,
+  newMemberCounts: 35.2,
+  todayBetting: 33.1,
+  walletBalance: 27.5,
+});
 
-    onMounted(() => {
-      getMemberList({ page: 3, results: 10 }).then((response) => {
-        Object.assign(state, response.data.data);
-        console.log(response);
-      });
-    });
-    return {
-      getUserName,
-      state,
-    };
-  },
-};
+onMounted(() => {
+  getMemberList({ page: 3, results: 10 }).then((response) => {
+    Object.assign(state, response.data.data);
+    console.log(response);
+  });
+});
+const currentDate = ref(new Date());
 </script>
 <style lang="scss" scoped>
 .growshrink {

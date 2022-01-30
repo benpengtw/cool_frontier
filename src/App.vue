@@ -1,10 +1,6 @@
 <template>
   <div class="w-full FLEX_C">
-    <div
-      :class="
-        currentPath !== '/' ? 'flex flex-grow bg-black' : 'flex flex-grow'
-      "
-    >
+    <div class="flex flex-grow">
       <router-view />
     </div>
   </div>
@@ -22,8 +18,4 @@ const currentPath = computed(() => {
   return router.currentRoute.value.path;
 });
 </script>
-<style lang="less" scoped>
-::v-deep(.van-tabs__nav--line) {
-  padding-bottom: 1.5rem;
-}
-</style>
+<style lang="less" scoped></style>

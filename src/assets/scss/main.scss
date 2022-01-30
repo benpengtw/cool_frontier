@@ -40,51 +40,51 @@ body {
   color: #fff;
   background: transparent;
 }
-@media only screen and (min-width: 1025px)  {
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    flex-direction: row;
-    align-items: stretch;
-    overflow-x: hidden;
-    font-family: 'PingFangTC', 'PingFangSC', "Bodoni", Helvetica, Arial, sans-serif,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-image: url("../bg.jpg");
-  }
-  #app {
-    width: 40%;
-    height: 100%;
-    min-height: 100%;
-    display: flex;
-    color: #fff;
-    background: transparent;
-    justify-content: center;
-  }
-  .van-tabbar {
-    width: 40%;
-    position: absolute;
-    left: 30.0%;
-  }
-  .container.FLEX_C.home {
-    height: 40%;
-    margin-top: 25%;
-    border-radius: 8px;
-    box-shadow: 5px 4px 62px rgba(0, 0, 0, 0.25);
-    // background: linear-gradient(135.35deg, #343434 5.41%, #0D0D0D 117.05%);
-    // align-items:center;
-    // justify-content: center;
-  }
-  .container.p-12.mt-8.FLEX_C.loginBox{
-    background:#2f2f31;
-  }
-}
+// @media only screen and (min-width: 1025px)  {
+//   body {
+//     margin: 0;
+//     padding: 0;
+//     width: 100%;
+//     height: 100%;
+//     min-height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     flex-grow: 1;
+//     flex-direction: row;
+//     align-items: stretch;
+//     overflow-x: hidden;
+//     font-family: 'PingFangTC', 'PingFangSC', "Bodoni", Helvetica, Arial, sans-serif,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei";
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     background-image: url("../bg.jpg");
+//   }
+//   #app {
+//     width: 40%;
+//     height: 100%;
+//     min-height: 100%;
+//     display: flex;
+//     color: #fff;
+//     background: transparent;
+//     justify-content: center;
+//   }
+//   .van-tabbar {
+//     width: 40%;
+//     position: absolute;
+//     left: 30.0%;
+//   }
+//   .container.FLEX_C.home {
+//     height: 40%;
+//     margin-top: 25%;
+//     border-radius: 8px;
+//     box-shadow: 5px 4px 62px rgba(0, 0, 0, 0.25);
+//     // background: linear-gradient(135.35deg, #343434 5.41%, #0D0D0D 117.05%);
+//     // align-items:center;
+//     // justify-content: center;
+//   }
+//   .container.p-12.mt-8.FLEX_C.loginBox{
+//     background:#2f2f31;
+//   }
+// }
 h1,h2,h3,h4,h5,h6,p,div{
   margin: 0;
 }
@@ -136,26 +136,7 @@ button:focus {
   font-family: "my-icon";
 }
 :root {
-  --van-button-primary-background-color: red;
-  --van-cell-background-color:black;
-  --van-cell-text-color: #fff;
-  --van-field-label-color:#967140;
-  --van-field-input-text-color: #fff;
-  --van-calendar-background-color: black;
-  --van-calendar-day-disabled-color:#7f7f7f;
-  --van-calendar-range-middle-color:#fff; 
-  --van-calendar-range-edge-background-color:#cda269;
-  --van-calendar-range-middle-background-opacity:0.5;
-  --van-calendar-month-mark-color:#ffffff80;
-  --van-popup-background-color:#3c3c3c;
-  --van-toast-background-color:#CDA269;
-  --van-collapse-item-content-background-color:black;
-  --van-cell-active-color:#4a4a4a;
-  --van-cell-background-color:transparent;
-  --van-field-label-width:8rem;
-  // --van-picker-confirm-action-color:#CDA269;
-  // --van-picker-cancel-action-color:#CDA269;
-  // --van-picker-option-text-color:#FFF;
+  --el-color-primary: green;
 }
 
 .goldGradient{
