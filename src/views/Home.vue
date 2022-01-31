@@ -44,25 +44,27 @@
       :current-page="currentPage",
       @current-change="handleCurrentChange"
     )
+test-dialog(:data="modelData", v-model="showDialog")
 </template>
 
 <script setup lang="ts">
 import { reactive, onMounted, computed, ref } from "vue";
 import { getMemberList } from "@/api/members/member";
-import { UserStore } from "@/store/userStore";
+import TestDialog from "@/components/TestDialog/index.vue";
 const currentPage = ref(0);
-const userStore = UserStore();
+
 const showCard = ref(true);
 const showList = ref(false);
+const showDialog = ref(false);
 const memberItems = ref();
-const state = reactive({
-  loading: true,
-  commissionRatio: 98.1,
-  netIncome: 87.5,
-  newMemberCounts: 35.2,
-  todayBetting: 33.1,
-  walletBalance: 27.5,
+const modelData = reactive({
+  name: {},
+  phone: "",
+  picture: {},
+  gender: "",
+  email: "",
 });
+
 const handleCurrentChange = (val: number) => {
   console.log(`current page: ${val}`);
   getMemberList({ page: val, results: 30 }).then((response) => {
@@ -72,7 +74,9 @@ const handleCurrentChange = (val: number) => {
   });
 };
 const openModal = (item: object) => {
+  showDialog.value = true;
   console.log("openModal", item);
+  Object.assign(modelData, item);
 };
 const setShowCard = () => {
   showCard.value = true;
