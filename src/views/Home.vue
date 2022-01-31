@@ -44,7 +44,7 @@
       :current-page="currentPage",
       @current-change="handleCurrentChange"
     )
-test-dialog(:data="modelData", v-model="showDialog")
+TestDialog(:data="modelData", v-model="showDialog")
 </template>
 
 <script setup lang="ts">

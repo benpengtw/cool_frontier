@@ -31,7 +31,9 @@ export default ({ mode }) =>
     define: {
       "process.env": {},
     },
-
+    optimizeDeps: {
+      include: ["element-plus"],
+    },
     resolve: {
       alias: {
         "@": resolve(__dirname, "src"),
