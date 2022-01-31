@@ -1,6 +1,11 @@
 <template lang="pug">
 .container.FLEX_C
-  .grid.grid-cols-10.gap-2.mb-10.CENTER_R
+  .flex.flex-row.items-center.justify-end.m-4
+    el-button-group
+      el-button(type="primary", @click="setShowCard") Card
+      el-button(type="primary", @click="setShowList") List
+
+  .grid.grid-cols-10.gap-2.mb-10.CENTER_R(v-if="showCard")
     el-card(
       v-for="item in memberItems",
       :key="item.phone",
@@ -9,10 +14,27 @@
       @click="openModal(item)"
     )
       img.image(:src="item.picture.medium")
-      div(style="padding: 14px")
+      .p-4
         span {{ item.name.first }} {{ item.name.last }}
-        .bottom
-          time.time {{ item.gender }}
+        .grid
+          span {{ item.gender }}
+  .grid.grid-cols-1.gap-2.mb-10.CENTER_R(v-if="showList")
+    el-card(
+      v-for="item in memberItems",
+      :key="item.phone",
+      :body-style="{ padding: '0px' }",
+      shadow="hover",
+      @click="openModal(item)"
+    )
+      .grid.grid-flow-col.grid-rows-3
+        .row-span-3.CENTER_R 
+          img.image(:src="item.picture.large")
+        .col-span-2 
+          span {{ item.name.first }} {{ item.name.last }}
+        .col-span-2
+          span {{ item.gender }}
+        .col-span-2
+          span {{ item.email }}
 
   .mt-20.CENTER_R
     el-pagination(
@@ -30,7 +52,8 @@ import { getMemberList } from "@/api/members/member";
 import { UserStore } from "@/store/userStore";
 const currentPage = ref(0);
 const userStore = UserStore();
-const getUserName = computed(() => userStore.getUserName);
+const showCard = ref(true);
+const showList = ref(false);
 const memberItems = ref();
 const state = reactive({
   loading: true,
@@ -50,6 +73,14 @@ const handleCurrentChange = (val: number) => {
 };
 const openModal = (item: object) => {
   console.log("openModal", item);
+};
+const setShowCard = () => {
+  showCard.value = true;
+  showList.value = false;
+};
+const setShowList = (item: object) => {
+  showCard.value = false;
+  showList.value = true;
 };
 onMounted(() => {
   getMemberList({ page: 1, results: 30 }).then((response) => {
