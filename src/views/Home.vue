@@ -51,8 +51,8 @@ TestDialog(:data="modelData", v-model="showDialog")
 import { reactive, onMounted, computed, ref } from "vue";
 import { getMemberList } from "@/api/members/member";
 import TestDialog from "@/components/TestDialog/index.vue";
-const currentPage = ref(0);
 
+const currentPage = ref(1);
 const showCard = ref(true);
 const showList = ref(false);
 const showDialog = ref(false);
