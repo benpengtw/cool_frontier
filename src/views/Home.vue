@@ -67,6 +67,7 @@ const modelData = reactive({
 
 const handleCurrentChange = (val: number) => {
   console.log(`current page: ${val}`);
+  currentPage.value = val;
   getMemberList({ page: val, results: 30 }).then((response) => {
     // Object.assign(state, response.data.data);
     console.log("handleCurrentChange", response);
